@@ -22,3 +22,6 @@ musica = Musica('Fa fe fi fo Funk',	'Anira', 'Funk', 2019, '3:05')
 baseDeDados.append(musica)
 
 print(baseDeDados[0].titulo)
+
+# É possivel declarar a base de dados como um array (lista) de objetos da classe Musica
+# Uma possivel maneira de representar a playslist contiuaria sendo um array (lista) dos IDs (posicao na base de dados)

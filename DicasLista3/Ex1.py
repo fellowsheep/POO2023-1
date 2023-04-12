@@ -30,12 +30,12 @@ class Pais:
 
     #OBS.: este método está errado (em revisão) -- CORRIGIDO!!!!
     def vizinhosComuns(self,pais):
-        vizinhosPais = pais.getVizinhos()
-        vizinhosAmbos = []
+        vizinhosPais = pais.getVizinhos() #pega a listagem de vizinhos do outro pais
+        vizinhosAmbos = [] #inicia a lista dos vizinhos comuns a ambos
         for i in vizinhosPais:  
-            if self.verificarVizinho(i) == True:
-                vizinhosAmbos.append(i)
-        return vizinhosAmbos
+            if self.verificarVizinho(i) == True: #verifica se o vizinho do outro país é vizinho do país
+                vizinhosAmbos.append(i) #adiciona na lista de ambos se verdadeiro! :)
+        return vizinhosAmbos #retorna a lista, como o exercício pede!
 
 
     def adicionarVizinho(self,pais):

@@ -28,15 +28,14 @@ class Pais:
     def calcularDensidade(self):
         pass
 
-    #OBS.: este método está errado (em revisão)
+    #OBS.: este método está errado (em revisão) -- CORRIGIDO!!!!
     def vizinhosComuns(self,pais):
         vizinhosPais = pais.getVizinhos()
-        for i in self.__vizinhos:
-            for j in vizinhosPais:
-                print(i.getCodigo(),' ',j.getCodigo(), end=' ')
-                print(i.verificarVizinho(j))
-                #if i.verificarVizinho(j) == True:
-                    #print(j.getCodigo())
+        vizinhosAmbos = []
+        for i in vizinhosPais:  
+            if self.verificarVizinho(i) == True:
+                vizinhosAmbos.append(i)
+        return vizinhosAmbos
 
 
     def adicionarVizinho(self,pais):
@@ -91,4 +90,6 @@ pais02.listarVizinhos()
 
 print('-----------------')
 
-pais01.vizinhosComuns(pais02)
+vizinhosComuns = pais01.vizinhosComuns(pais02)
+for i in vizinhosComuns:
+    print(i.getCodigo())

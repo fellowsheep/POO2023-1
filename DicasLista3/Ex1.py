@@ -28,15 +28,14 @@ class Pais:
     def calcularDensidade(self):
         pass
 
-    #OBS.: este método está errado (em revisão)
+    #OBS.: este método está errado (em revisão) -- CORRIGIDO!!!!
     def vizinhosComuns(self,pais):
-        vizinhosPais = pais.getVizinhos()
-        for i in self.__vizinhos:
-            for j in vizinhosPais:
-                print(i.getCodigo(),' ',j.getCodigo(), end=' ')
-                print(i.verificarVizinho(j))
-                #if i.verificarVizinho(j) == True:
-                    #print(j.getCodigo())
+        vizinhosPais = pais.getVizinhos() #pega a listagem de vizinhos do outro pais
+        vizinhosAmbos = [] #inicia a lista dos vizinhos comuns a ambos
+        for i in vizinhosPais:  
+            if self.verificarVizinho(i) == True: #verifica se o vizinho do outro país é vizinho do país
+                vizinhosAmbos.append(i) #adiciona na lista de ambos se verdadeiro! :)
+        return vizinhosAmbos #retorna a lista, como o exercício pede!
 
 
     def adicionarVizinho(self,pais):
@@ -91,4 +90,6 @@ pais02.listarVizinhos()
 
 print('-----------------')
 
-pais01.vizinhosComuns(pais02)
+vizinhosComuns = pais01.vizinhosComuns(pais02)
+for i in vizinhosComuns:
+    print(i.getCodigo())

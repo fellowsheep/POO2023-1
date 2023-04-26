@@ -12,7 +12,7 @@ pygame.init()
 
 screen = pygame.display.set_mode((800, 600))
 
-sprite = load_image('fluxosheep.png',400,300)
+sprite = load_image('python_icon.png',400,300)
 
 while True:
     for event in pygame.event.get():

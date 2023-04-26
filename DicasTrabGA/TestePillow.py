@@ -2,7 +2,7 @@ import tkinter as tk
 from PIL import ImageTk, Image
 
 # Abre a imagem
-imagem = Image.open('Python-logo.png')
+imagem = Image.open('python_icon.png')
 
 # Cria a janela
 janela = tk.Tk()

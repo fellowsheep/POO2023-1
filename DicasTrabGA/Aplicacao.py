@@ -7,6 +7,7 @@ class Aplicacao:
     # Método construtor
     def __init__(self):
         self.tela = 0
+        self.terminou = False
         self.carregarFigurinhas()
         # Fazer os outros carregamentos pertinentes
         #carregarUsuarios()
@@ -15,15 +16,10 @@ class Aplicacao:
     # Método que possui o loop principal
     def executar(self):
         opcao = -1
-        terminou = False
-        while not terminou:
+        while not self.terminou:
             ##########################################
             if self.tela == 0: #tela entrada
-                opcao = menuEntrada()
-                if opcao == '0':
-                    terminou = True
-                else:
-                    self.msgErro(1)
+                self.telaInicial()
             ##########################################        
 
             elif self.tela == 1: #tela gerenciar album
@@ -35,6 +31,7 @@ class Aplicacao:
 
     # Método que prepara a aplicação para seu término
     def finalizar(self):
+        print('Finalizando a aplicacao!')
         # executar os salvamentos nos arquivos
         pass
 
@@ -62,8 +59,15 @@ class Aplicacao:
         for i in range(len(self.listaFigurinhas)):
             self.listaFigurinhas[i].imprimir()
 
-    
-    def msgsErro(self, codigo):
+    def msgErro(self, codigo):
         if codigo == 1:
             print('Opcao invalida!')
             input('Pressione qualquer tecla para continuar')
+
+    # Processa as opções da Tela Inicial
+    def telaInicial(self):
+        opcao = menuEntrada()
+        if opcao == '0':
+            self.terminou = True
+        else:
+            self.msgErro(1)

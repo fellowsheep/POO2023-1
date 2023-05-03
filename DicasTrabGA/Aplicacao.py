@@ -23,11 +23,11 @@ class Aplicacao:
             ##########################################        
 
             elif self.tela == 1: #tela gerenciar album
-                pass
+                self.telaGerenciarAlbum()
 
             ##########################################
             elif self.tela == 2: #tela gerenciar colecao
-                pass
+                self.telaGerenciarColecao()
 
     # Método que prepara a aplicação para seu término
     def finalizar(self):
@@ -64,10 +64,41 @@ class Aplicacao:
             print('Opcao invalida!')
             input('Pressione qualquer tecla para continuar')
 
-    # Processa as opções da Tela Inicial
+    # Processa as opções da Tela Inicial - 0
     def telaInicial(self):
-        opcao = menuEntrada()
+        opcao = menuInicial()
         if opcao == '0':
             self.terminou = True
+        elif opcao == '1':
+            self.cadastrarUsuario()
+        elif opcao == '2':
+            self.acessarAlbum()
         else:
             self.msgErro(1)
+        
+
+    # Processa as opções da Tela Gerenciar Album - 1
+    def telaGerenciarAlbum(self):
+        opcao = menuGerenciarAlbum()
+        if opcao == '0':
+            self.tela = 0  #muda para a tela inicial
+        else:
+            self.msgErro(1)
+
+     # Processa as opções da Tela Gerenciar Colecao - 2
+    def telaGerenciarColecao(self):
+        opcao = menuGerenciarColecao()
+        if opcao == '0':
+            self.tela = 1  #muda para a tela Gerenciar Album
+        else:
+            self.msgErro(1)
+
+    def cadastrarUsuario(self):
+        print('Cadastrando usuario....')
+        input('Pressione qualquer tecla para continuar...')
+
+    def acessarAlbum(self):
+        print('Verificando usuario e recuperando o album do usuario')
+        # Se conseguiu acessar, mudar para tela de Gerenciamento do Album
+        self.tela = 1
+        input('Pressione qualquer tecla para continuar...')

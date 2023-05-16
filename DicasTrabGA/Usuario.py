@@ -1,10 +1,10 @@
-
+from Album import *
 
 class Usuario:
     def __init__(self, nome, senha):
         self.nome = nome
         self.senha = senha
-        self.album = None
+        self.album = Album()
 
     def getNomeUsuario(self):
         return self.nome()

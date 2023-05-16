@@ -3,7 +3,6 @@ class Figurinha:
         self.nro = nro
         self.nome = nome
         self.conteudo = conteudo
-        self.status = None
         self.nroPagina = nroPagina
 
     def imprimir(self):

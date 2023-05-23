@@ -57,6 +57,7 @@ class Vegetal:
 
 #Questão 1b
 biomas = []
+
 biomas.append(Bioma("Amazônia")) #0
 biomas.append(Bioma("Mata Atlântica")) #1
 biomas.append(Bioma("Cerrado")) #2
@@ -90,6 +91,7 @@ for i in range(len(faunaBR)):
         if faunaBR[i][j] == True:
             biomas[j-1].adicionarAnimal(animal) #Por que j-1? Olha lá na listinha biomas
 
+#Percorrendo a tabela de vegetais
 for i in range(len(floraBR)):
     vegetal = Vegetal(floraBR[i][0]) #coluna onde está o nome do animal
     for j in range(1, len(floraBR[i])):
